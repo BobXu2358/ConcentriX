@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public float speed = 1f;
     Animator anim;
     private int rot = 0;
+    public Transform wave;
 
 	// Use this for initialization
 	void Start ()
@@ -76,5 +77,14 @@ public class PlayerController : MonoBehaviour
         }
 
         transform.Translate(dir * speed * Time.deltaTime);
+
+        if (Input.GetKeyDown(KeyCode.Space)) {
+            Emit();
+        }
 	}
+
+    void Emit() {
+        GameObject waveObject = Instantiate(wave).gameObject;
+        waveObject.transform.position = this.transform.position;
+    }
 }
