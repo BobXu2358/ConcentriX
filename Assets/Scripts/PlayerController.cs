@@ -20,7 +20,6 @@ public class PlayerController : MonoBehaviour
 	void Update ()
     {
         Vector2 dir = Vector2.zero;
-        float actualSpeed = speed;
 
         if (Input.GetKey(KeyCode.W))
         {
@@ -69,7 +68,7 @@ public class PlayerController : MonoBehaviour
             dir = Vector2.up;
         }
 
-        //not walking
+
         if (dir.Equals(Vector2.zero))
             anim.SetInteger("state", 0);
         else
@@ -77,15 +76,13 @@ public class PlayerController : MonoBehaviour
             anim.SetInteger("state", 1);
         }
 
-        transform.Translate(dir * speed * Time.deltaTime);
-
-        if (Input.GetKeyDown(KeyCode.Space)) {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
             anim.SetInteger("state", 2);
-            actualSpeed = speed / 2;
             Emit();
         }
 
-        transform.Translate(dir * actualSpeed * Time.deltaTime);
+        transform.Translate(dir * speed * Time.deltaTime);
     }
 
     void Emit() {
