@@ -82,7 +82,10 @@ public class PlayerController : MonoBehaviour
             Emit();
         }
 
+        //float minDistance = GetComponent<BoxCollider2D>().size.x/2;
         transform.Translate(dir * speed * Time.deltaTime);
+        //if (!map.GetComponent<CollisionController>().isPositionTranslatable(transform.position + new Vector3(dir.x, dir.y)*minDistance))
+        //    transform.Translate(-dir * speed * Time.deltaTime);
     }
 
     void Emit() {
