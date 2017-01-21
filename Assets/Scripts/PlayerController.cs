@@ -8,7 +8,6 @@ public class PlayerController : MonoBehaviour
     public float speed = 1f;
     Animator anim;
     private int rot = 0;
-    public Transform wave;
 
 	// Use this for initialization
 	void Start ()
@@ -19,6 +18,8 @@ public class PlayerController : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
+        GetComponent<WaveManager>().transform.position = this.transform.position;
+
         Vector2 dir = Vector2.zero;
 
         if (Input.GetKey(KeyCode.W))
@@ -79,17 +80,12 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             anim.SetInteger("state", 2);
-            Emit();
+            GetComponent<WaveManager>().Emit();
         }
 
         //float minDistance = GetComponent<BoxCollider2D>().size.x/2;
         transform.Translate(dir * speed * Time.deltaTime);
         //if (!map.GetComponent<CollisionController>().isPositionTranslatable(transform.position + new Vector3(dir.x, dir.y)*minDistance))
         //    transform.Translate(-dir * speed * Time.deltaTime);
-    }
-
-    void Emit() {
-        GameObject waveObject = Instantiate(wave).gameObject;
-        waveObject.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, 8);
     }
 }
