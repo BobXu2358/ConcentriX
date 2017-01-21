@@ -45,13 +45,14 @@ public class ConcentrxWave : MonoBehaviour {
         sp.transform.localScale = new Vector3(radius, radius, 0);
         sp.color = new Color(sp.color.r, sp.color.g, sp.color.b, sp.color.a - Time.deltaTime * decayAlpha);
         float magnitude = sp.bounds.size.x/2*0.87f;
+        int layerMask = 1 >> LayerMask.NameToLayer("Default");
 
         for (int i = 0; i < numberOfRays - 1; i++) {
             this.transform.rotation = angles[i];
-            RaycastHit2D hit = Physics2D.Raycast(this.transform.position, transform.up, magnitude);
+            RaycastHit2D hit = Physics2D.Raycast(this.transform.position, transform.up, magnitude, layerMask);
             //Debug.DrawLine(center, hit.point, Color.yellow, 0.1f);
-            //Debug.DrawRay(center, transform.up*magnitude, Color.yellow, 0.1f);
             if (hit.collider != null && !blacklist[i]) {
+                Debug.DrawRay(this.transform.position, transform.up * magnitude, Color.yellow, 0.1f);
                 blacklist[i] = true;
                 instanciatedObject = Instantiate(glow, hit.point, Quaternion.FromToRotation(glow.up, hit.normal)).gameObject;
                 Destroy(instanciatedObject, glowLifespan);

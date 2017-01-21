@@ -85,6 +85,6 @@ public class PlayerController : MonoBehaviour
 
     void Emit() {
         GameObject waveObject = Instantiate(wave).gameObject;
-        waveObject.transform.position = this.transform.position;
+        waveObject.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, 8);
     }
 }
