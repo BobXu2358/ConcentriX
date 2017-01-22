@@ -13,6 +13,7 @@ public class WaveManager : MonoBehaviour {
     public float radiusIncrementMultiplier;
     public float frequency;  // waves per second
     public Transform waveObject;
+    public Transform waveSegmentObject;
     public Transform edgeGlowObject;
 
     // Use this for initialization
@@ -33,6 +34,6 @@ public class WaveManager : MonoBehaviour {
 
     public void Emit() {
         GameObject waveInstance = Instantiate(waveObject, transform.position, transform.rotation).gameObject;
-        waveInstance.GetComponent<ConcentrxWave>().Initialize(enableEdgeCollision, numberOfRays, decayAlpha, edgeGlowObjectLifespan, radiusIncrementMultiplier, edgeGlowObject);
+        waveInstance.GetComponent<ConcentrxWave>().Initialize(enableEdgeCollision, numberOfRays, decayAlpha, edgeGlowObjectLifespan, radiusIncrementMultiplier, edgeGlowObject, waveSegmentObject);
     }
 }
