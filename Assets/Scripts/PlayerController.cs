@@ -5,20 +5,20 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
-    public float speed = 1f;
-    Animator anim;
+    float speed;
+    public float maxSpeed = 20f;
+    Animator animator;
     private int rot = 0;
 
 	// Use this for initialization
-	void Start ()
-    {
-        anim = GetComponent<Animator>();
+	void Start () {
+        animator = GetComponent<Animator>();
     }
 	
 	// Update is called once per frame
-	void Update ()
-    {
+	void Update () {
         GetComponent<WaveManager>().transform.position = this.transform.position;
+        speed = maxSpeed;
 
         Vector2 dir = Vector2.zero;
 
@@ -69,19 +69,17 @@ public class PlayerController : MonoBehaviour
             dir = Vector2.up;
         }
 
-
         if (dir.Equals(Vector2.zero))
-            anim.SetInteger("state", 0);
-        else
-        {
-            anim.SetInteger("state", 1);
-        }
+            animator.SetInteger("state", 0);
+        else animator.SetInteger("state", 1);
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            anim.SetInteger("state", 2);
+        if (Input.GetKeyDown(KeyCode.Space)) {
+            animator.SetInteger("state", 2);
             GetComponent<WaveManager>().Emit();
         }
+
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("cast"))
+            speed *= 0.5f;
 
         //float minDistance = GetComponent<BoxCollider2D>().size.x/2;
         transform.Translate(dir * speed * Time.deltaTime);

@@ -13,11 +13,13 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile></CompilerResponseFile>
+    <CompilerResponseFile>
+    </CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
     <UnityVersion>5.5.0f3</UnityVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <LangVersion Condition=" '$(VisualStudioVersion)' != '10.0' ">4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -75,20 +77,30 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\AlphaController.cs" />
+    <Compile Include="C:\Users\Andrew\Desktop\AlphaController.cs">
+      <Link>Assets\Scripts\AlphaController.cs</Link>
+    </Compile>
     <Compile Include="Assets\Scripts\BeaconManager.cs" />
     <Compile Include="Assets\Scripts\ButtonKeyboardControl.cs" />
     <Compile Include="Assets\Scripts\ButtonListener.cs" />
     <Compile Include="Assets\Scripts\ButtonManager.cs" />
     <Compile Include="Assets\Scripts\Camera2DFollow.cs" />
     <Compile Include="Assets\Scripts\ColliderCreator.cs" />
-    <Compile Include="Assets\Scripts\ConcentrxWave.cs" />
+    <Compile Include="C:\Users\Andrew\Desktop\ConcentrxWave.cs">
+      <Link>Assets\Scripts\ConcentrxWave.cs</Link>
+    </Compile>
     <Compile Include="Assets\Scripts\DestroyTimer.cs" />
     <Compile Include="Assets\Scripts\EnemyController.cs" />
-    <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="C:\Users\Andrew\Desktop\PlayerController.cs">
+      <Link>Assets\Scripts\PlayerController.cs</Link>
+    </Compile>
     <Compile Include="Assets\Scripts\SetPlayerPosition.cs" />
     <Compile Include="Assets\Scripts\SmoothFollow.cs" />
-    <Compile Include="Assets\Scripts\WaveManager.cs" />
+    <Compile Include="Assets\Scripts\VolumeBarController.cs" />
+    <Compile Include="Assets\Scripts\VolumeControl.cs" />
+    <Compile Include="C:\Users\Andrew\Desktop\WaveManager.cs">
+      <Link>Assets\Scripts\WaveManager.cs</Link>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>

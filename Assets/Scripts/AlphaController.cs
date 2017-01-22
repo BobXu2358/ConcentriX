@@ -20,11 +20,11 @@ public class AlphaController : MonoBehaviour {
         this.GetComponent<SpriteRenderer>().color = new Color(sc.r, sc.g, sc.b, sc.a - decayRate * Time.deltaTime);  // Linear decay
         alpha = this.GetComponent<SpriteRenderer>().color.a;
 
-        if (alpha <= 0)
+        if (alpha <= 0f)
             Destroy(gameObject);
     }
 
-    void Initialize (float lifespan) {
+    public void Initialize (float lifespan) {
         this.lifespan = lifespan;
     }
 }
