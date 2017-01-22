@@ -8,16 +8,23 @@ public class PlayerController : MonoBehaviour
     float speed;
     public float maxSpeed = 20f;
     Animator animator;
+    WaveManager[] waveManagers;
     private int rot = 0;
 
 	// Use this for initialization
 	void Start () {
         animator = GetComponent<Animator>();
+        waveManagers = GetComponents<WaveManager>();
     }
 	
 	// Update is called once per frame
 	void Update () {
-        GetComponent<WaveManager>().transform.position = this.transform.position;
+        bool walling = false;
+        for (int i = 0; i < waveManagers.Length; i++) {
+            waveManagers[i].transform.position = this.transform.position;
+            if (waveManagers[i].alwaysOn)
+                walling = waveManagers[i].isHittingObject();
+        }
         speed = maxSpeed;
 
         Vector2 dir = Vector2.zero;
@@ -78,7 +85,7 @@ public class PlayerController : MonoBehaviour
             GetComponent<WaveManager>().Emit();
         }
 
-        if (animator.GetCurrentAnimatorStateInfo(0).IsName("cast"))
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("cast") || walling)
             speed *= 0.5f;
 
         //float minDistance = GetComponent<BoxCollider2D>().size.x/2;
