@@ -5,7 +5,6 @@ using UnityEngine;
 public class ButtonManager : MonoBehaviour {
 
     Animator anim = null;
-    public string LevelToLoad;
 
 	// Use this for initialization
 	void Start () {
@@ -26,10 +25,5 @@ public class ButtonManager : MonoBehaviour {
     private void OnMouseExit()
     {
         anim.SetBool("selected", false);
-    }
-
-    private void OnMouseUpAsButton()
-    {
-        Application.LoadLevel(LevelToLoad);
     }
 }

@@ -81,7 +81,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\AlphaController.cs" />
     <Compile Include="Assets\Scripts\BeaconManager.cs" />
+    <Compile Include="Assets\Scripts\ButtonKeyboardControl.cs" />
+    <Compile Include="Assets\Scripts\ButtonListener.cs" />
     <Compile Include="Assets\Scripts\ButtonManager.cs" />
     <Compile Include="Assets\Scripts\Camera2DFollow.cs" />
     <Compile Include="Assets\Scripts\ColliderCreator.cs" />
@@ -91,6 +94,8 @@
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\SetPlayerPosition.cs" />
     <Compile Include="Assets\Scripts\SmoothFollow.cs" />
+    <Compile Include="Assets\Scripts\VolumeBarController.cs" />
+    <Compile Include="Assets\Scripts\VolumeControl.cs" />
     <Compile Include="Assets\Scripts\WaveManager.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Levels/maze-1.unity
+- path: Assets/Levels/option.unity
   isLoaded: 1
   isActive: 1
