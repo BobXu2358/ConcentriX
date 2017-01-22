@@ -5,7 +5,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
-    public float speed = 1f;
+    public float maxSpeed = 1f;
+    float speed = 1f;
     Animator anim;
     private int rot = 0;
 
@@ -19,6 +20,7 @@ public class PlayerController : MonoBehaviour
 	void Update ()
     {
         GetComponent<WaveManager>().transform.position = this.transform.position;
+        speed = maxSpeed;
 
         Vector2 dir = Vector2.zero;
 
@@ -69,20 +71,20 @@ public class PlayerController : MonoBehaviour
             dir = Vector2.up;
         }
 
-
         if (dir.Equals(Vector2.zero))
             anim.SetInteger("state", 0);
-        else
-        {
+        else {
             anim.SetInteger("state", 1);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
+        if (Input.GetKeyDown(KeyCode.Space)) {
             anim.SetInteger("state", 2);
             GetComponent<WaveManager>().Emit();
         }
 
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName("cast"))
+            speed *= 0.4f;
+            
         //float minDistance = GetComponent<BoxCollider2D>().size.x/2;
         transform.Translate(dir * speed * Time.deltaTime);
         //if (!map.GetComponent<CollisionController>().isPositionTranslatable(transform.position + new Vector3(dir.x, dir.y)*minDistance))
