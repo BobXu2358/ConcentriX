@@ -32,9 +32,8 @@ public class EnemyController : MonoBehaviour {
             //transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward); //Quaternion.Slerp(transform.rotation, q, Time.deltaTime * speed);
             //vectorToTarget.y = transform.position.y;
             transform.rotation = Quaternion.LookRotation(vectorToTarget, Vector3.up);
-            Instantiate(waveObject, transform.up*angles[i]*radius, angles[i]);
+
             transform.Translate(transform.up * speed * Time.deltaTime);
-            Quaternion.AnglesAxis(angles[i].eulerAngles, tranform.forward).
         }
 
         if (previousPosition.Equals(transform.position))
