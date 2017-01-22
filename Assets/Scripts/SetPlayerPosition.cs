@@ -8,7 +8,8 @@ public class SetPlayerPosition : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        player.transform.position = this.transform.position;
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        player.position = this.transform.position;
 	}
 	
 	// Update is called once per frame

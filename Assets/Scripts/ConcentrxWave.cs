@@ -78,7 +78,6 @@ public class ConcentrxWave : MonoBehaviour {
                 //Debug.DrawRay(this.transform.position, transform.up * magnitude, Color.yellow, 0.1f);
                 blacklist[i] = true;
                 instanciatedObject = Instantiate(edgeGlowObject, hit.point, Quaternion.FromToRotation(edgeGlowObject.up, hit.normal)).gameObject;
-                Destroy(instanciatedObject, edgeGlowObjectLifespan);
             }
         }
     }

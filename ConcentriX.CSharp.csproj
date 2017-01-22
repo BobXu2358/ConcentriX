@@ -75,7 +75,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\AlphaController.cs" />
     <Compile Include="Assets\Scripts\BeaconManager.cs" />
+    <Compile Include="Assets\Scripts\ButtonKeyboardControl.cs" />
+    <Compile Include="Assets\Scripts\ButtonListener.cs" />
     <Compile Include="Assets\Scripts\ButtonManager.cs" />
     <Compile Include="Assets\Scripts\Camera2DFollow.cs" />
     <Compile Include="Assets\Scripts\ColliderCreator.cs" />
