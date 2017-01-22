@@ -44,7 +44,7 @@ public class ButtonKeyboardControl : MonoBehaviour {
             }
             if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.KeypadEnter))
             {
-                Application.LoadLevel("level1");
+                Application.LoadLevel("moon_surface");
             }
         }
         else if (optionAnim.GetBool("selected"))

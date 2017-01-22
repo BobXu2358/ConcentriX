@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2015
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConcentriX.CSharp", "ConcentriX.CSharp.csproj", "{5587992E-B948-0433-490A-8C3A7A55EC85}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConcentriX", "ConcentriX.csproj", "{F07E08F3-B7AD-8099-C700-9D700DA70BCF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,10 +9,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{5587992E-B948-0433-490A-8C3A7A55EC85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5587992E-B948-0433-490A-8C3A7A55EC85}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5587992E-B948-0433-490A-8C3A7A55EC85}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5587992E-B948-0433-490A-8C3A7A55EC85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F07E08F3-B7AD-8099-C700-9D700DA70BCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F07E08F3-B7AD-8099-C700-9D700DA70BCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F07E08F3-B7AD-8099-C700-9D700DA70BCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F07E08F3-B7AD-8099-C700-9D700DA70BCF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
