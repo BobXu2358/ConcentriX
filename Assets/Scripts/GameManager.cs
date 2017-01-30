@@ -14,11 +14,14 @@ public class GameManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         DontDestroyOnLoad(this);
-        Application.LoadLevel("menu");
 	}
 	
 	// Update is called once per frame
 	void Update () {
+        if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "splash")
+        {
+            Application.LoadLevel("menu");
+        }
 		if(chip1 && chip2 && chip3)
         {
             Application.LoadLevel("accomplish");
